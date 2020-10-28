@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 21e94cf9c03657d4e9af934921a152d3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7297751026260022314
+    second: gg1_0
+  - first:
+      213: 3344597145326614687
+    second: gg1_1
+  - first:
+      213: 3604778150075181560
+    second: gg1_2
+  - first:
+      213: 2316325755431253820
+    second: gg1_3
+  - first:
+      213: 4529530233339076815
+    second: gg1_4
+  - first:
+      213: 4684586130158611426
+    second: gg1_0
+  - first:
+      213: -5740953809675482143
+    second: gg1_1
+  - first:
+      213: -1136190419476485078
+    second: gg1_2
+  - first:
+      213: 6324397569060905976
+    second: gg1_3
+  - first:
+      213: 2863697728776459608
+    second: gg1_4
+  - first:
+      213: 3374176619796937494
+    second: gg1_5
+  - first:
+      213: -2574495876192229775
+    second: gg1_6
+  - first:
+      213: 1671127688125353261
+    second: gg1_7
+  - first:
+      213: 5884103119596865590
+    second: gg1_8
+  - first:
+      213: 2497296238724348662
+    second: gg1_9
+  - first:
+      213: 2542481874418822677
+    second: gg1_10
+  - first:
+      213: -8856876621835646914
+    second: gg1_11
+  - first:
+      213: 7526340050186943124
+    second: gg1_12
+  - first:
+      213: 4911494830612090375
+    second: gg1_13
+  - first:
+      213: 340328334535944448
+    second: gg1_14
+  - first:
+      213: 7414147076534010002
+    second: gg1_15
+  - first:
+      213: 232590490599393082
+    second: gg1_16
+  - first:
+      213: 8792051207879424068
+    second: gg1_17
+  - first:
+      213: -5311193049035272750
+    second: gg1_18
+  - first:
+      213: -1437800488914642501
+    second: gg1_19
+  - first:
+      213: -7373297651301706151
+    second: gg1_20
+  - first:
+      213: 9002198326566921611
+    second: gg1_21
+  - first:
+      213: -3705692184296814069
+    second: gg1_22
+  - first:
+      213: 3845918958540860343
+    second: gg1_23
+  - first:
+      213: -2798689575180332587
+    second: gg1_24
+  - first:
+      213: 9093041222869472924
+    second: gg1_25
+  - first:
+      213: -7870700878796538589
+    second: gg1_26
+  - first:
+      213: -1362294969523568921
+    second: gg1_27
+  - first:
+      213: -1368718062097684351
+    second: gg1_28
+  - first:
+      213: 1366554777095741173
+    second: gg1_29
+  - first:
+      213: -2835734555650326580
+    second: gg1_30
+  - first:
+      213: 4704661560027941316
+    second: gg1_31
+  - first:
+      213: -3126492295727010220
+    second: gg1_32
+  - first:
+      213: 472849015215538569
+    second: gg1_33
+  - first:
+      213: 6886537841758234413
+    second: gg1_34
+  - first:
+      213: 863481459842373864
+    second: gg1_35
+  - first:
+      213: 1646144936503247537
+    second: gg1_36
+  - first:
+      213: -9188398068021035321
+    second: gg1_37
+  - first:
+      213: -120439871604725037
+    second: gg1_38
+  - first:
+      213: 769742173931995601
+    second: gg1_39
+  - first:
+      213: 6207574796200555727
+    second: gg1_40
+  - first:
+      213: -474963623764614213
+    second: gg1_41
+  - first:
+      213: 5098905236192358630
+    second: gg1_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gg1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb63dfe34ef20140800000000000000
+      internalID: 4684586130158611426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 312
+        width: 88
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f987afb12656a6e20800000000000000
+      internalID: 3344597145326614687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_2
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 312
+        width: 87
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f92259e0aeb60230800000000000000
+      internalID: 3604778150075181560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_3
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 128
+        width: 88
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37719c800e352020800000000000000
+      internalID: 2316325755431253820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 128
+        width: 87
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0619dafbf1cde30800000000000000
+      internalID: 4529530233339076815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
