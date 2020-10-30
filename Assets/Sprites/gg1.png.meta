@@ -175,7 +175,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -234,10 +234,10 @@ TextureImporter:
       name: gg1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 500
+        x: 272
+        y: 310
+        width: 88
+        height: 164
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,6 +331,90 @@ TextureImporter:
       bones: []
       spriteID: fc0619dafbf1cde30800000000000000
       internalID: 4529530233339076815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 312
+        width: 83
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bbc6032cb73de20800000000000000
+      internalID: 3374176619796937494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_6
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 312
+        width: 82
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176aadf04ad854cd0800000000000000
+      internalID: -2574495876192229775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_7
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 128
+        width: 82
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d080147c9013710800000000000000
+      internalID: 1671127688125353261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg1_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 83
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638c659ac9888a150800000000000000
+      internalID: 5884103119596865590
       vertices: []
       indices: 
       edges: []
