@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
+using System.IO.MemoryMappedFiles;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,51 +13,87 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject untable;
     private bool tab = false;
     public bool pl = false;
-    public float rad = 7f;    
+    public float rad = 7f;
+    private Animator anim;
+    [SerializeField] bool right = true, left, up, down;
+    
     void Start()
     {
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (true)
         {
-            if (tab == false) {
-                Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rad);
-                foreach(Collider2D hitCollider in hitColliders)
-                {
-                    hitCollider.SendMessage("Take", SendMessageOptions.DontRequireReceiver);
-                    table.SetActive(true);
-                    tab = true;
-                    pl = !pl;
-                }
-                
-            }
-            else
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                tab = false;
-                table.SetActive(false);
-                untable.GetComponent<untable>().un = !untable.GetComponent<untable>().un;
-                pl=!pl;
+                if (tab == false)
+                {
+                    Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rad);
+                    foreach (Collider2D hitCollider in hitColliders)
+                    {
+                        hitCollider.SendMessage("Take", SendMessageOptions.DontRequireReceiver);
+                        table.SetActive(true);
+                        tab = true;
+                        pl = !pl;
+                        anim.SetBool("hand", true);
+                    }
+
+                }
+                else
+                {
+                    tab = false;
+                    table.SetActive(false);
+                    untable.GetComponent<untable>().un = !untable.GetComponent<untable>().un;
+                    pl = !pl;
+                    anim.SetBool("hand", false);
+                }
             }
+            Vector2 direction = transform.position;
+            if (Input.GetKey(KeyCode.W))
+            {
+                direction.y += speed * Time.deltaTime;
+                anim.SetBool("up", true);
+                anim.SetBool("left", false);
+                anim.SetBool("down", false);
+                anim.SetBool("right", false);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                direction.y -= speed * Time.deltaTime;
+                anim.SetBool("up", false);
+                anim.SetBool("left", false);
+                anim.SetBool("down", true);
+                anim.SetBool("right", false);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                direction.x += speed * Time.deltaTime;
+                anim.SetBool("up", false);
+                anim.SetBool("left", false);
+                anim.SetBool("down", false);
+                anim.SetBool("right", true);
+
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                direction.x -= speed * Time.deltaTime;
+                anim.SetBool("up", false);
+                anim.SetBool("left", true);
+                anim.SetBool("down", false);
+                anim.SetBool("right", false);
+            }
+            transform.position = direction;
+            if (Input.GetKeyUp(KeyCode.D)){
+                anim.SetBool("right", false);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+                anim.SetBool("down", false);
+            if (Input.GetKeyUp(KeyCode.W))
+                anim.SetBool("up", false);
+            if (Input.GetKeyUp(KeyCode.A))
+                anim.SetBool("left", false);
         }
-        Vector2 direction = transform.position;
-        if (Input.GetKey(KeyCode.W))
-        {
-            direction.y += speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            direction.y -= speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction.x += speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction.x -= speed * Time.deltaTime;
-        }
-        transform.position = direction;
     }
 }
