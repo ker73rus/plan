@@ -58,7 +58,11 @@ public class Player : MonoBehaviour
                 anim.SetBool("left", false);
                 anim.SetBool("down", false);
                 anim.SetBool("right", false);
-            }
+                if (tab)
+                {
+                    anim.SetBool("hup", true);
+                }
+                    }
             if (Input.GetKey(KeyCode.S))
             {
                 direction.y -= speed * Time.deltaTime;
@@ -66,6 +70,10 @@ public class Player : MonoBehaviour
                 anim.SetBool("left", false);
                 anim.SetBool("down", true);
                 anim.SetBool("right", false);
+                if (tab)
+                {
+                    anim.SetBool("hdown", true);
+                }
             }
             if (Input.GetKey(KeyCode.D))
             {
@@ -74,6 +82,10 @@ public class Player : MonoBehaviour
                 anim.SetBool("left", false);
                 anim.SetBool("down", false);
                 anim.SetBool("right", true);
+                if (tab)
+                {
+                    anim.SetBool("hup", true);
+                }
 
             }
             if (Input.GetKey(KeyCode.A))
@@ -83,17 +95,43 @@ public class Player : MonoBehaviour
                 anim.SetBool("left", true);
                 anim.SetBool("down", false);
                 anim.SetBool("right", false);
+                if (tab)
+                {
+                    anim.SetBool("hdown", true);
+                }
             }
             transform.position = direction;
             if (Input.GetKeyUp(KeyCode.D)){
                 anim.SetBool("right", false);
+                if (tab)
+                {
+                    anim.SetBool("hup", false);
+                }
             }
             if (Input.GetKeyUp(KeyCode.S))
-                anim.SetBool("down", false);
+            {
+                if (tab)
+                {
+                    anim.SetBool("hup", false);
+                }
+                anim.SetBool("hdown", false);
+            }
             if (Input.GetKeyUp(KeyCode.W))
+            {
+                if (tab)
+                {
+                    anim.SetBool("hup", false);
+                }
                 anim.SetBool("up", false);
+            }
             if (Input.GetKeyUp(KeyCode.A))
+            {
+                if (tab)
+                {
+                    anim.SetBool("hdown", false);
+                }
                 anim.SetBool("left", false);
+            }
         }
     }
 }
