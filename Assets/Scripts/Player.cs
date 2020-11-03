@@ -66,6 +66,15 @@ public class Player : MonoBehaviour
                 if (tab)
                 {
                     anim.SetBool("hup", true);
+                    if (Input.GetKey(KeyCode.D))
+                        anim.SetBool("hup", false);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    anim.SetBool("up", false);
+                    anim.SetBool("left", false);
+                    anim.SetBool("down", false);
+                    anim.SetBool("right", false);
                 }
                     }
             if (Input.GetKey(KeyCode.S))
@@ -78,6 +87,15 @@ public class Player : MonoBehaviour
                 if (tab)
                 {
                     anim.SetBool("hdown", true);
+                    if (Input.GetKey(KeyCode.W))
+                        anim.SetBool("hdown", false);
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    anim.SetBool("up", false);
+                    anim.SetBool("left", false);
+                    anim.SetBool("down", false);
+                    anim.SetBool("right", false);
                 }
             }
             if (Input.GetKey(KeyCode.D))
@@ -90,8 +108,16 @@ public class Player : MonoBehaviour
                 if (tab)
                 {
                     anim.SetBool("hup", true);
+                    if (Input.GetKey(KeyCode.A))
+                        anim.SetBool("hup", false);
                 }
-
+                if (Input.GetKey(KeyCode.A))
+                {
+                    anim.SetBool("up", false);
+                    anim.SetBool("left", false);
+                    anim.SetBool("down", false);
+                    anim.SetBool("right", false);
+                }
             }
             if (Input.GetKey(KeyCode.A))
             {
@@ -103,6 +129,15 @@ public class Player : MonoBehaviour
                 if (tab)
                 {
                     anim.SetBool("hdown", true);
+                    if (Input.GetKey(KeyCode.D))
+                        anim.SetBool("hdown", false);
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    anim.SetBool("up", false);
+                    anim.SetBool("left", false);
+                    anim.SetBool("down", false);
+                    anim.SetBool("right", false);
                 }
             }
             transform.position = direction;
@@ -138,7 +173,8 @@ public class Player : MonoBehaviour
                 anim.SetBool("left", false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.R)) 
+        
+
             
     }
     IEnumerator TakeTable()
