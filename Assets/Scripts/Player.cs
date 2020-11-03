@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public bool pl = false;
     public float rad = 7f;
     private Animator anim;
-    [SerializeField] bool right = true, left, up, down;
+    [SerializeField] bool check;
     
     void Start()
     {
@@ -24,10 +24,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (true)
+        if (check)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                
                 if (tab == false)
                 {
                     Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rad);
@@ -37,7 +38,11 @@ public class Player : MonoBehaviour
                         table.SetActive(true);
                         tab = true;
                         pl = !pl;
+                        
                         anim.SetBool("hand", true);
+                        check = false;
+                        StartCoroutine("TakeTable");
+                        
                     }
 
                 }
@@ -112,9 +117,9 @@ public class Player : MonoBehaviour
             {
                 if (tab)
                 {
-                    anim.SetBool("hup", false);
+                    anim.SetBool("hdown", false);
                 }
-                anim.SetBool("hdown", false);
+                anim.SetBool("down", false);
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
@@ -133,5 +138,18 @@ public class Player : MonoBehaviour
                 anim.SetBool("left", false);
             }
         }
+        if (Input.GetKeyDown(KeyCode.R)) 
+            
+    }
+    IEnumerator TakeTable()
+    {
+        yield return new WaitForSeconds(0.2f);
+        anim.SetBool("right", false);
+        anim.SetBool("left", false);
+        anim.SetBool("hdown", false);
+        anim.SetBool("hup", false);
+        yield return new WaitForSeconds (1);
+        check = true;
+        
     }
 }
