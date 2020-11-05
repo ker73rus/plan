@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: -4730610469777540570
     second: gg+table_3
+  - first:
+      213: 3365639544709600704
+    second: gg+table+shadows_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,10 +126,10 @@ TextureImporter:
       name: gg+table_1
       rect:
         serializedVersion: 2
-        x: 178
-        y: 306
-        width: 170
-        height: 108
+        x: 198
+        y: 377
+        width: 136
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,6 +181,27 @@ TextureImporter:
       bones: []
       spriteID: 62a7a2277de795eb0800000000000000
       internalID: -4730610469777540570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gg+table+shadows_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 307
+        width: 150
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c55c60855725be20800000000000000
+      internalID: 3365639544709600704
       vertices: []
       indices: 
       edges: []

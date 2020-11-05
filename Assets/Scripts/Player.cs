@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public float rad = 7f;
     private Animator anim;
     [SerializeField] bool check;
+    public GameObject upper;
     
     void Start()
     {
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
                     {
                         hitCollider.SendMessage("Take", SendMessageOptions.DontRequireReceiver);
                         table.SetActive(true);
+                        upper.SetActive(false);
                         tab = true;
                         pl = !pl;
                         
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
                 {
                     tab = false;
                     table.SetActive(false);
+                    
                     untable.GetComponent<untable>().un = !untable.GetComponent<untable>().un;
                     pl = !pl;
                     anim.SetBool("hand", false);
@@ -66,7 +69,7 @@ public class Player : MonoBehaviour
                 if (tab)
                 {
                     anim.SetBool("hup", true);
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.S))
                         anim.SetBool("hup", false);
                 }
                 if (Input.GetKey(KeyCode.S))
