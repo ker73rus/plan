@@ -8,20 +8,23 @@ public class place : MonoBehaviour
     [SerializeField] GameObject newtable;
     [SerializeField] GameObject player;
     [SerializeField] Vector3 dist;
-    [SerializeField] Vector3 zero;
+    [SerializeField] float zero;
     [SerializeField] bool near;
     void Update()
     {
         dist = player.transform.position - transform.position;
-        if (dist.x < 2 && dist.y < 2)
+
+        if (Mathf.Abs(dist.x) < 2 && Mathf.Abs(dist.y) < 2)
             near = true;
         else
             near = false;
-        if(untable.GetComponent<untable>().un == true && Input.GetKeyDown(KeyCode.E) && near )
-        {
-            gameObject.SetActive(false);
-            newtable.SetActive(true);
+        
+        if(near )
+        { if (Input.GetKeyDown(KeyCode.E)) { gameObject.SetActive(false); newtable.SetActive(true); }
+
+           
             player.GetComponent<Player>().pl = true;
+            
         }
 
 

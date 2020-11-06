@@ -7,12 +7,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float speed; 
+    [SerializeField] float speed, distanx, distany; 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject table;
-    [SerializeField] GameObject untable;
+    [SerializeField] GameObject untable; [SerializeField] GameObject tablet;
+    public GameObject tableplace;
     private bool tab = false;
     public bool pl = false;
+    public bool dist;
     public float rad = 7f;
     private Animator anim;
     [SerializeField] bool check;
@@ -21,10 +23,14 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        pl = false;
     }
 
     void Update()
     {
+        distanx = transform.position.x - tablet.transform.position.x;
+        distany = transform.position.y - tablet.transform.position.y;
+
         if (check)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -36,19 +42,22 @@ public class Player : MonoBehaviour
                     foreach (Collider2D hitCollider in hitColliders)
                     {
                         hitCollider.SendMessage("Take", SendMessageOptions.DontRequireReceiver);
+                        
+                        
+                    }
+                    if (Mathf.Abs(distanx )< 2 && Mathf.Abs(distany) < 2) {
                         table.SetActive(true);
                         upper.SetActive(false);
                         tab = true;
-                        pl = !pl;
-                        
+
+
                         anim.SetBool("hand", true);
                         check = false;
                         StartCoroutine("TakeTable");
-                        
                     }
 
                 }
-                else
+                else if(pl)
                 {
                     tab = false;
                     table.SetActive(false);
@@ -187,7 +196,9 @@ public class Player : MonoBehaviour
         anim.SetBool("left", false);
         anim.SetBool("hdown", false);
         anim.SetBool("hup", false);
-        yield return new WaitForSeconds (1);
+
+        yield return new WaitForSeconds(1);
+        
         check = true;
         
     }
