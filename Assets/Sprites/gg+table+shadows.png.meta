@@ -123,37 +123,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg+table_1
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 377
-        width: 136
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39994d33c232be550800000000000000
-      internalID: 6191080785505982867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: gg+table_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 240
-        width: 199
-        height: 53
+        x: 198
+        y: 253
+        width: 181
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 73, y: 0, z: 24, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -168,13 +147,13 @@ TextureImporter:
       name: gg+table_3
       rect:
         serializedVersion: 2
-        x: 14
-        y: 257
-        width: 125
-        height: 27
+        x: 28
+        y: 264
+        width: 96
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 9, y: 0, z: 12, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -194,7 +173,7 @@ TextureImporter:
         width: 150
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
