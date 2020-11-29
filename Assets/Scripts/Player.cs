@@ -11,12 +11,11 @@ public class Player : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject table;
     [SerializeField] GameObject untable;
-    private bool tab = false;
+    [SerializeField] bool tab = false;
     public bool pl = false;
     public float rad = 7f;
     private Animator anim;
     [SerializeField] bool check;
-    public GameObject upper;
     
     void Start()
     {
@@ -37,11 +36,12 @@ public class Player : MonoBehaviour
                     {
                         hitCollider.SendMessage("Take", SendMessageOptions.DontRequireReceiver);
                         table.SetActive(true);
-                        upper.SetActive(false);
+                        
                         tab = true;
                         pl = !pl;
                         
                         anim.SetBool("hand", true);
+                        anim.Play("handsup");
                         check = false;
                         StartCoroutine("TakeTable");
                         
@@ -182,12 +182,12 @@ public class Player : MonoBehaviour
     }
     IEnumerator TakeTable()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.01f);
         anim.SetBool("right", false);
         anim.SetBool("left", false);
         anim.SetBool("hdown", false);
         anim.SetBool("hup", false);
-        yield return new WaitForSeconds (1);
+        yield return new WaitForSeconds (0.1f);
         check = true;
         
     }

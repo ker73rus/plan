@@ -542,10 +542,10 @@ MonoBehaviour:
   rb: {fileID: 1037169358}
   table: {fileID: 2130701183}
   untable: {fileID: 1751672341}
+  tab: 1
   pl: 1
   rad: 2.04
   check: 1
-  upper: {fileID: 0}
 --- !u!212 &1037169360
 SpriteRenderer:
   m_ObjectHideFlags: 0
