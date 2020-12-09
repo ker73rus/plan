@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 
 public class morginal : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    public void Close()
+    // Start is called before the first frame update
+    void Start()
     {
-        gameObject.SetActive(false);
-        player.GetComponent<Player>().check = true;
         
     }
 
-    public void Transport()
+    // Update is called once per frame
+    void Update()
     {
-        EditorSceneManager.LoadScene("SampleScene");
+        
     }
 }
