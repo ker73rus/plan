@@ -5,15 +5,9 @@ using UnityEngine;
 public class untable : MonoBehaviour
 {
     public bool un;
-    [SerializeField] GameObject place;
-    void Update()
+    public GameObject place;
+    public void Taking()
     {
-        if (un == false)
-            place.SetActive(true);
-        else
-        {
-
-        }
-
+        place.SetActive(true);
     }
 }

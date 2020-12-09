@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    private bool _near = true;
+    public bool _near = true;
+    public GameObject place;
     [SerializeField] GameObject untable;[SerializeField] GameObject player;
     public void Take()
     {
