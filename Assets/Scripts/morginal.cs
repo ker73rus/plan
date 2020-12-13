@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 
 public class morginal : MonoBehaviour
 {
@@ -15,6 +14,6 @@ public class morginal : MonoBehaviour
 
     public void Transport()
     {
-        EditorSceneManager.LoadScene("SampleScene");
+        
     }
 }

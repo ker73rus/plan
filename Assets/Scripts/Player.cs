@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape)) Application.Quit();
        hitColliders = Physics2D.OverlapCircleAll(transform.position, rad2);
         foreach (Collider2D hitCollider in hitColliders)
         {
