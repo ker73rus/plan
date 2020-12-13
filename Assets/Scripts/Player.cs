@@ -24,11 +24,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-       hitColliders = Physics2D.OverlapCircleAll(transform.position, rad2);
-        foreach (Collider2D hitCollider in hitColliders)
-        {
-            hitCollider.SendMessage("Open", SendMessageOptions.DontRequireReceiver);
-        }
         if (check)
         {
             if (Input.GetKeyDown(KeyCode.E))

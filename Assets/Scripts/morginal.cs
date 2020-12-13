@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 
 public class morginal : MonoBehaviour
 {
@@ -14,6 +13,6 @@ public class morginal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EditorSceneManager.LoadScene("SampleScene");
+        
     }
 }
