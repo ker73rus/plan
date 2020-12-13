@@ -8,22 +8,33 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float speed; 
-    [SerializeField] Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb ;
     [SerializeField] GameObject table;
-    [SerializeField] GameObject untable;
+    [SerializeField] GameObject untable, place;
     [SerializeField] bool tab = false;
+    [SerializeField] Collider2D[] hitColliders;
     public bool pl = false;
-    public float rad = 7f;
+    public float rad = 1f, rad2 = 0.1f;
     private Animator anim;
-    [SerializeField] bool check;
+    public bool check;
     
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
+    public void AnimStop()
+    {
+        anim.SetBool("up", false);
+        anim.SetBool("left", false);
+        anim.SetBool("down", false);
+        anim.SetBool("right", false);
+
+    }
+
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape)) Application.Quit();
        hitColliders = Physics2D.OverlapCircleAll(transform.position, rad2);
         foreach (Collider2D hitCollider in hitColliders)
         {
@@ -33,33 +44,32 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
-                if (tab == false)
+                hitColliders = Physics2D.OverlapCircleAll(transform.position, rad);
+                if (!table.activeSelf)
                 {
-                    Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rad);
                     foreach (Collider2D hitCollider in hitColliders)
                     {
                         hitCollider.SendMessage("Take", SendMessageOptions.DontRequireReceiver);
-                        table.SetActive(true);
-                        
-                        tab = true;
-                        pl = !pl;
-                        
-                        anim.SetBool("hand", true);
-                        anim.Play("handsup");
-                        check = false;
-                        StartCoroutine("TakeTable");
+                        if (!hitCollider.isActiveAndEnabled)
+                        {
+                            
+                            place = hitCollider.GetComponent<Table>().place;
+                            place.SetActive(true);
+                            table.SetActive(true);
+                            anim.SetBool("hand", true);
+                            anim.Play("handsup");
+                            check = false;
+                            StartCoroutine("TakeTable");
+                        }
                         
                     }
 
                 }
-                else
+                else if (place.GetComponent<place>().near) 
                 {
-                    tab = false;
-                    table.SetActive(false);
-                    
-                    untable.GetComponent<untable>().un = !untable.GetComponent<untable>().un;
-                    pl = !pl;
+                    place.GetComponent<place>().PlaceDown();
+                        table.SetActive(false);
+                 
                     anim.SetBool("hand", false);
                 }
             }
@@ -67,10 +77,8 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 direction.y += speed * Time.deltaTime;
+                AnimStop();
                 anim.SetBool("up", true);
-                anim.SetBool("left", false);
-                anim.SetBool("down", false);
-                anim.SetBool("right", false);
                 if (tab)
                 {
                     anim.SetBool("hup", true);
@@ -79,19 +87,14 @@ public class Player : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    anim.SetBool("up", false);
-                    anim.SetBool("left", false);
-                    anim.SetBool("down", false);
-                    anim.SetBool("right", false);
+                    AnimStop();
                 }
                     }
             if (Input.GetKey(KeyCode.S))
             {
                 direction.y -= speed * Time.deltaTime;
-                anim.SetBool("up", false);
-                anim.SetBool("left", false);
+                AnimStop();
                 anim.SetBool("down", true);
-                anim.SetBool("right", false);
                 if (tab)
                 {
                     anim.SetBool("hdown", true);
@@ -100,18 +103,13 @@ public class Player : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.W))
                 {
-                    anim.SetBool("up", false);
-                    anim.SetBool("left", false);
-                    anim.SetBool("down", false);
-                    anim.SetBool("right", false);
+                    AnimStop();
                 }
             }
             if (Input.GetKey(KeyCode.D))
             {
                 direction.x += speed * Time.deltaTime;
-                anim.SetBool("up", false);
-                anim.SetBool("left", false);
-                anim.SetBool("down", false);
+                AnimStop();
                 anim.SetBool("right", true);
                 if (tab)
                 {
@@ -121,19 +119,14 @@ public class Player : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.A))
                 {
-                    anim.SetBool("up", false);
-                    anim.SetBool("left", false);
-                    anim.SetBool("down", false);
-                    anim.SetBool("right", false);
+                    AnimStop();
                 }
             }
             if (Input.GetKey(KeyCode.A))
             {
                 direction.x -= speed * Time.deltaTime;
-                anim.SetBool("up", false);
+                AnimStop();
                 anim.SetBool("left", true);
-                anim.SetBool("down", false);
-                anim.SetBool("right", false);
                 if (tab)
                 {
                     anim.SetBool("hdown", true);
@@ -142,10 +135,7 @@ public class Player : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    anim.SetBool("up", false);
-                    anim.SetBool("left", false);
-                    anim.SetBool("down", false);
-                    anim.SetBool("right", false);
+                    AnimStop();
                 }
             }
             transform.position = direction;
@@ -181,17 +171,15 @@ public class Player : MonoBehaviour
                 anim.SetBool("left", false);
             }
         }
-        
 
-            
-    }
+
+       
+
+        }
     IEnumerator TakeTable()
     {
+        AnimStop();
         yield return new WaitForSeconds(0.01f);
-        anim.SetBool("right", false);
-        anim.SetBool("left", false);
-        anim.SetBool("hdown", false);
-        anim.SetBool("hup", false);
         yield return new WaitForSeconds (0.1f);
         check = true;
         
