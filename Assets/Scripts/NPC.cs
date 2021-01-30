@@ -26,5 +26,9 @@ public class NPC : MonoBehaviour
             near = false;
             Deed();
         }
+        if((near) && Input.GetKeyDown(KeyCode.E))
+        {
+
+        }
     }
 }
