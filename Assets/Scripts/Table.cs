@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    public bool _near = true;
+    [SerializeField] GameObject player, canvas;
+    [SerializeField] Vector3 dist;
+    [SerializeField] float gip;
+    public bool _near = true, near2;
     public GameObject place;
-    [SerializeField] GameObject untable;[SerializeField] GameObject player;
+    [SerializeField] GameObject untable;
     public void Take()
     {
         if (_near)
@@ -25,5 +28,19 @@ public class Table : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
         }
         else gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        dist = player.transform.position - transform.position;
+        gip = Mathf.Sqrt(Mathf.Pow(dist.x, 2) + Mathf.Pow(dist.y, 2));
+        Deed();
+    }
+    public void Deed()
+    {
+        if (gip < 1.5f)
+        {
+            near2 = true;
+            canvas.GetComponent<Canvas>().Deed(near2);
+        }
+        else if (gip > 1.5f && gip < 2.0f)
+        {
+            canvas.GetComponent<Canvas>().Deed(near2); near2 = false; }
     }
 }
